@@ -1,0 +1,108 @@
+/*
+// Con Math.pow funcion predefinida
+function potencia1(n,x){
+ console.log(Math.pow(n,x)); 
+}
+
+potencia1(2,3);
+
+// Con exponente
+function potencia2(n,x){
+  let resultado=1;
+  return (n**x);
+}
+
+console.log(potencia2(2,3));
+
+// Con funcion iterativa
+function potencia3(n,x){
+  let resultado=1;
+}
+
+console.log(potencia3(2,3));
+*/
+
+//recursion
+//1 - Caso base que termine la recursividad
+
+//2 - Problema tiene que poder subdividirse en subproblemas
+/*
+function potencia_recursiva(numb, elev){
+  if(elev=1){
+    return numb;
+  }else{
+    return (numb*potencia_recursiva(numb,elev-1));
+  }
+}
+potencia_recursiva(2,3);
+//1º iteracion
+x=2, n=3
+return 2*potencia:recursiva(2^2)
+return 2*(2*2)
+//2º iteracion
+x=2,n=2
+return 2*potencia_recursiva(2^1)
+return 2*2
+//3º iteracion
+x=2, n=1
+return 2
+*/
+//rest parameters (parametros de expansion)
+/*
+function sumarTodo(...numeros){
+  let acumulado=0;
+  for (let num of numeros){
+    acumulado+=num;
+  }
+  return acumulado;
+}
+
+console.log(sumarTodo(1,2,7,109,28,99,100,23,67));
+
+function concatena(...palabras){
+  let concat="";
+  for (let string of palabras){
+    concat += string + " ";
+  }
+  return concat;
+}
+
+console.log(concatena("hola", "adios", "muy buenas"));
+
+function restaRecursiva(total, ...numeros){
+  if (numeros.length==1){
+  	return (total-=numeros[0]);
+  }else{
+    total-=numeros.pop();
+    return (restaRecursiva(total, ...numeros));
+  }
+}
+
+
+let numeroInicial=1000;
+console.log(restaRecursiva(numeroInicial, 12, 20, 79, 100));
+*/
+/*
+function resta(){
+  let matriz_argumentos=Array.from(arguments);
+  let total = matriz_argumentos[0];
+  for(let i=1; i<=matriz_argumentos.length; i++){
+  	total -= matriz_argumentos[i];
+  }
+  return total;
+}
+
+console.log(resta(500, 100, 50, 20));
+*/
+function externa(){
+	console.log("externa");
+  	function interna(){
+    	console.log("interna");
+    }
+}
+
+(function () { console.log("hola alumnos"); }) ();
+
+(function (quien){
+  console.log(`soy ${quien}`);
+}) ("pepe");
