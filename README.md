@@ -82,4 +82,4 @@ Este proyecto está licenciado bajo la Licencia ISC.
 
 Adrián Martín Vázquez - [GitHub](vscode-file://vscode-app/c:/Users/adria/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html)
 
-Project repository: [https://github.com/6R4N4DR1/DWEC_VIEW_MartinVazquez_Adrian](vscode-file://vscode-app/c:/Users/adria/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html)
+Repositorio del proyecto: [https://github.com/6R4N4DR1/DWEC_VIEW_MartinVazquez_Adrian](vscode-file://vscode-app/c:/Users/adria/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html)
