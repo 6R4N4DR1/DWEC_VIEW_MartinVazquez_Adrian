@@ -74,10 +74,12 @@ Contiene ejemplos y tareas relacionadas con la depuración y manejo de errores e
 
 Para cada tarea o proyecto, sigue las instrucciones de instalación y uso proporcionadas en sus respectivos archivos `README.md`.
 
-## Autor
-
-Este repositorio ha sido creado y es mantenido por Adrián Martín Vázquez (6R4N4DR1).
-
 ## Licencia
 
 Este proyecto está licenciado bajo la Licencia ISC.
+
+## Contacto
+
+Adrián Martín Vázquez - [GitHub](vscode-file://vscode-app/c:/Users/adria/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html)
+
+Project repository: [https://github.com/6R4N4DR1/DWEC_VIEW_MartinVazquez_Adrian](vscode-file://vscode-app/c:/Users/adria/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.html)
