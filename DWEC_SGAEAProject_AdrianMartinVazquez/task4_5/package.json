@@ -1,0 +1,33 @@
+{
+  "name": "dwec_sgaeaprojecttask4-5_martinvazquez_adrian",
+  "version": "1.0.0",
+  "description": "Este proyecto es un Sistema de Gestión Académica desarrollado por mí, Adrián Martín Vázquez. Proporciona gestión de registros de estudiantes y asignaturas, incluyendo la creación, eliminación y matriculación de estudiantes.",
+  "main": "./src/scripts/script4_5.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack serve --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/6R4N4DR1/DWEC_SGAEAProjectTask4-5_MartinVazquez_Adrian.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/6R4N4DR1/DWEC_SGAEAProjectTask4-5_MartinVazquez_Adrian/issues"
+  },
+  "homepage": "https://github.com/6R4N4DR1/DWEC_SGAEAProjectTask4-5_MartinVazquez_Adrian#readme",
+  "devDependencies": {
+    "@babel/core": "^7.26.8",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.26.8",
+    "babel-loader": "^9.2.1",
+    "clean-webpack-plugin": "^4.0.0",
+    "html-webpack-plugin": "^5.6.3",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
+  }
+}

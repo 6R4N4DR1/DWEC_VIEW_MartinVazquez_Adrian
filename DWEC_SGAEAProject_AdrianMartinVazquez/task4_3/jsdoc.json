@@ -1,0 +1,15 @@
+{
+    "source": {
+    "include": ["./src"],
+    "exclude": ["node_modules"],
+    "includePattern": ".+\\.js(doc|x)?$",
+    "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "opts": {
+        "destination": "./docs",
+        "template": "node_modules/clean-jsdoc-theme",
+        "theme_opts": {
+            "theme": "slate"
+        }
+    }
+}

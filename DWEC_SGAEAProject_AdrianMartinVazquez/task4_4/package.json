@@ -1,0 +1,22 @@
+{
+  "name": "dwec_sgaeaprojecttask4-4_martinvazquez_adrian",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/script4_4.js",
+  "scripts": {
+    "start": "node src/script4_4.js",
+    "test": "jest",
+    "lint": "eslint src/**/*.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.19.0",
+    "jest": "^29.7.0"
+  }
+}
