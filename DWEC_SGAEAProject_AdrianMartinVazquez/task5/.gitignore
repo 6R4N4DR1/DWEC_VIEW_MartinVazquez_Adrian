@@ -1,5 +1,0 @@
-# No subir node_modules al repositorio
-node_modules/
-
-# No subir el fichero package-lock.json al repositorio
-package-lock.json
