@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGAEA</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="panel-izq">
+            <h1>Gestión Académica</h1>
+            <button id="limpiar-campos" class="limpiar">Borrar Campos</button>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <h3>Crear Estudiante</h3>
+                    <input type="text" id="nombre" placeholder="Nombre">
+                    <input type="number" id="edad" placeholder="Edad">
+
+                    <h3>Direcci&oacute;n</h3>
+                    <input type="text" id="calle" placeholder="Calle">
+                    <input type="number" id="numero" placeholder="N&uacute;mero">
+                    <input type="text" id="piso" placeholder="Piso">
+                    <input type="text" id="codPostal" placeholder="C&oacute;digo Postal">
+                    <input type="text" id="provincia" placeholder="Provincia">
+                    <input type="text" id="localidad" placeholder="Localidad">
+                    <button id="crear-estudiante">Crear</button>
+
+                    <h3>Eliminar Estudiante</h3>
+                    <input type="number" id="id-eliminar" placeholder="ID Estudiante a eliminar">
+                    <button id="eliminar-estudiante">Eliminar</button>
+
+                    <h3>Promedios de Estudiantes</h3>
+                    <input type="text" id="nombre-estudiante" placeholder="Nombre Estudiante a hacer el promedio">
+                    <button id="promedio-estudiante">Calcular Promedio</button>
+                    <button id="promedio-general">Promedio General</button>
+                </div>
+
+                <div class="form-group">
+                    <h3>Crear Asignatura</h3>
+                    <input type="text" id="nombre-asignatura" placeholder="Nombre Asignatura">
+                    <button id="crear-asignatura">Crear</button>
+
+                    <h3>Eliminar Asignatura</h3>
+                    <input type="text" id="nombre-asignatura" placeholder="Nombre Asignatura a eliminar">
+                    <button id="eliminar-asignatura">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
