@@ -5,48 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SGAEA</title>
     <link rel="stylesheet" href="css/estilos.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <div class="panel-izq">
-            <h1>Gestión Académica</h1>
-            <button id="limpiar-campos" class="limpiar">Borrar Campos</button>
+    <div id="formulario">
+        <div id="sidebarIzq">
+            <h1>SISTEMA DE GESTI&Oacute;N ACAD&Eacute;MICA</h1>
 
             <div class="form-grid">
                 <div class="form-group">
-                    <h3>Crear Estudiante</h3>
-                    <input type="text" id="nombre" placeholder="Nombre">
-                    <input type="number" id="edad" placeholder="Edad">
+                    <div class="contenedor">
+                        <h2>Persona</h2>
+                        <input type="text" id="nombre" placeholder="Nombre">
+                        <input type="number" id="edad" placeholder="Edad">
 
-                    <h3>Direcci&oacute;n</h3>
-                    <input type="text" id="calle" placeholder="Calle">
-                    <input type="number" id="numero" placeholder="N&uacute;mero">
-                    <input type="text" id="piso" placeholder="Piso">
-                    <input type="text" id="codPostal" placeholder="C&oacute;digo Postal">
-                    <input type="text" id="provincia" placeholder="Provincia">
-                    <input type="text" id="localidad" placeholder="Localidad">
-                    <button id="crear-estudiante">Crear</button>
+                        <h2>Direcci&oacute;n</h2>
+                        <input type="text" id="calle" placeholder="Calle">
+                        <input type="number" id="numero" placeholder="N&uacute;mero">
+                        <input type="text" id="piso" placeholder="Piso">
+                        <input type="text" id="codPostal" placeholder="C&oacute;digo Postal">
+                        <input type="text" id="provincia" placeholder="Provincia">
+                        <input type="text" id="localidad" placeholder="Localidad">
+                        <button id="crearEstudiante">Crear estudiante</button>
+                    </div>
+                    
+                    <div class="contenedor">
+                        <h2>Eliminar estudiante</h2>
+                        <input type="number" id="idEstudianteEliminar" placeholder="ID estudiante a eliminar">
+                        <button id="eliminarEstudiante">Eliminar</button>
+                    </div>
 
-                    <h3>Eliminar Estudiante</h3>
-                    <input type="number" id="id-eliminar" placeholder="ID Estudiante a eliminar">
-                    <button id="eliminar-estudiante">Eliminar</button>
-
-                    <h3>Promedios de Estudiantes</h3>
-                    <input type="text" id="nombre-estudiante" placeholder="Nombre Estudiante a hacer el promedio">
-                    <button id="promedio-estudiante">Calcular Promedio</button>
-                    <button id="promedio-general">Promedio General</button>
+                    <div class="contenedor">
+                        <h2>Asignatura</h2>
+                        <input type="text" id="nombreAsignatura" placeholder="Nombre de asignatura">
+                        <button id="crearAsignatura">Crear asignatura</button>
+                    </div>
+                    
+                    <div class="contenedor">
+                        <h2>Eliminar asignatura</h2>
+                        <input type="text" id="asignaturaEliminar" placeholder="Asignatura a eliminar">
+                        <button id="eliminarAsignatura">Eliminar</button>
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <h3>Crear Asignatura</h3>
-                    <input type="text" id="nombre-asignatura" placeholder="Nombre Asignatura">
-                    <button id="crear-asignatura">Crear</button>
+                    <div class="contenedor">
+                        <h2>Matricular estudiante</h2>
+                        <input type="number" id="idEstudianteMatricular" placeholder="ID estudiante a matricular">
+                        <input type="text" id="asignaturaMatricular" placeholder="Asignatura en la que se matricular&aacute;">
+                        <button id="matricularEstudianteAsignatura">Matricular</button>
+                    </div>
 
-                    <h3>Eliminar Asignatura</h3>
-                    <input type="text" id="nombre-asignatura" placeholder="Nombre Asignatura a eliminar">
-                    <button id="eliminar-asignatura">Eliminar</button>
+                    <div class="contenedor">
+                        <h2>Desmatricular estudiante</h2>
+                        <input type="number" id="idEstudianteDesmatricular" placeholder="ID estudiante a desmatricular">
+                        <input type="number" id="indexAsignaturaDesmatricular" placeholder="Indice asignatura en la que se desmatricular&aacute;">
+                        <button id="desmatricularEstudianteAsignatura">Desmatricular</button>
+                    </div>
+
+                    <div class="contenedor">
+                        <h2>Calificar estudiante</h2>
+                        <input type="number" id="idEstudianteCalificar" placeholder="ID estudiante a calificar">
+                        <input type="text" id="asignaturaCalificar" placeholder="Asignatura que se calificar&aacute;">
+                        <input type="number" id="nota" placeholder="Nota">
+                        <button id="calificarEstudianteAsignatura">Calificar</button>
+                    </div>
+
+                    <div class="contenedor">
+                        <h2>Promedios</h2>
+                        <input type="number" id="idEstudiantePromedio" placeholder="ID estudiante a hacer el promedio">
+                        <button id="promedioEstudiante">Promedio del estudiante seleccionado</button>
+                        <button id="promedioGeneral">Promedio general de estudiantes</button>
+                    </div>
                 </div>
+            </div>
+        </div>
+
+        <div id="sidebarDer">
+            <div class="dropdown">
+                <h2>Estudiantes registrados</h2>
+                <ul id="listaEstudiantes"></ul>
+            </div>
+
+            <div class="dropdown">
+                <h2>Asignaturas</h2>
+                <ul id="listaAsignaturas"></ul>
             </div>
         </div>
     </div>
