@@ -16,9 +16,9 @@ Este proyecto es un Sistema de Gestión Académica desarrollado por mí, Adrián
 1. Clona el repositorio:
 
    ```sh
-   git clone https://github.com/6R4N4DR1/DWEC_SGAEAProjectTask4-5_MartinVazquez_Adrian.git
+   git clone https://github.com/6R4N4DR1/DWEC_VIEW_MartinVazquez_Adrian.git
 
-   cd DWEC_SGAEAProjectTask4-5_MartinVazquez_Adrian
+   cd DWEC_VIEW_MartinVazquez_Adrian
    ```
 
 
