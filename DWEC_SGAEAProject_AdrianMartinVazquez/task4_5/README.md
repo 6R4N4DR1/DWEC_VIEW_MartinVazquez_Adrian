@@ -20,8 +20,6 @@ Este proyecto es un Sistema de Gestión Académica desarrollado por mí, Adrián
 
    cd DWEC_VIEW_MartinVazquez_Adrian
    ```
-
-
 2. Instala las dependencias del proyecto:
 
    ```sh
@@ -96,7 +94,6 @@ mode: 'production'
 };
 ```
 
-
 - La configuración de Babel contiene la siguiente información:
 
 ```sh
@@ -104,8 +101,6 @@ mode: 'production'
     "presets": ["@babel/preset-env"]
 }
 ```
-
-
 
 ### Comando para compilar
 
@@ -139,12 +134,13 @@ Una vez dentro de la página para probar el código, abre la consola de desarrol
 
 ## Resultados de la Prueba
 
-1. Microsoft Edge 81
+1. Firefox 44
 
-   ![1739457863987](image/README/1739457863987.png)
-2. Firefox 45
+   ![1740051590453](image/README/1740051590453.png)
+2. Chrome 47
 
-   ![1739457983581](image/README/1739457983581.png)
-3. Chrome 48
+   ![1740051635282](image/README/1740051635282.png)
 
-   ![1739458190442](image/README/1739458190442.png)
+
+CanIUse:		   JAVASCRIPT					  CLASSES
+Chrome - ![1740051682006](image/README/1740051682006.png) 		Firefox - ![1740051755529](image/README/1740051755529.png)
