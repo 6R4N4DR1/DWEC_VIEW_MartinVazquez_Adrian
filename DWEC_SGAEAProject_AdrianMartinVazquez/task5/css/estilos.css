@@ -7,7 +7,6 @@ body {
 
 #formulario {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     padding: 20px;
 }
@@ -18,6 +17,14 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     width: 48%;
+}
+
+#sidebarIzq {
+    order: 1;
+}
+
+#sidebarDer {
+    order: 2;
 }
 
 h1, h2, h3, h4 {
@@ -80,6 +87,6 @@ li {
     border: 1px solid #ddd;
 }
 
-.dropdown {
+.drop {
     margin-bottom: 20px;
 }
