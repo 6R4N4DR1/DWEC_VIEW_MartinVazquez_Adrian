@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                             ? `<br> • ${estudiante.asignaturas.join("<br> • ")}`
                                             : "[Ninguna asignatura]";
             li.innerHTML = `${estudiante.id} &emsp; -> &emsp; ${estudiante.nombre}, ${estudiante.edad} a&ntilde;os <br>
-                            Ubicaci&oacute;n: ${estudiante.direccion.toString()} <br>
+                            Ubicaci&oacute;n: ${estudiante.direccion} <br>
                             Asignaturas del estudiante: ${asignaturasEstudiante}`;
             
             const eliminar = document.createElement("button");
