@@ -53,6 +53,15 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function crearAsignatura() {
+        const nombreAsign = document.getElementById("nombreAsignatura").value.trim();
+        if (nombreAsign && !asignaturas.includes(nombreAsignatura)) {
+            asignaturas.push(nombreAsignatura);
+            localStorage.setItem("asignaturas", JSON.stringify(asignaturas));
+            renderListaAsignaturas();
+        }
+    }
+
     function eliminarEstudiante() {
         const id = document.getElementById("idEstudianteEliminar").value.trim();
         if (estudiantes.findIndex(est => est.id == id) == -1) {
@@ -62,15 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem("estudiantes", JSON.stringify(estudiantes));
             renderListaEstudiantes();
             alert("Estudiante eliminado sin errores");
-        }
-    }
-
-    function crearAsignatura() {
-        const nombreAsign = document.getElementById("nombreAsignatura").value.trim();
-        if (nombreAsign && !asignaturas.includes(nombreAsignatura)) {
-            asignaturas.push(nombreAsignatura);
-            localStorage.setItem("asignaturas", JSON.stringify(asignaturas));
-            renderListaAsignaturas();
         }
     }
 
@@ -156,8 +156,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     document.getElementById("crearEstudiante").addEventListener("click", crearEstudiante);
-    document.getElementById("eliminarEstudiante").addEventListener("click", eliminarEstudiante);
     document.getElementById("crearAsignatura").addEventListener("click", crearAsignatura);
+    document.getElementById("eliminarEstudiante").addEventListener("click", eliminarEstudiante);
     document.getElementById("eliminarAsignatura").addEventListener("click", eliminarAsignatura);
     document.getElementById("matricularEstudianteAsignatura").addEventListener("click", matricularEstudiante);
     document.getElementById("desmatricularEstudianteAsignatura").addEventListener("click", desmatricularEstudiante);
