@@ -126,3 +126,12 @@ li:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border: 1px solid #ddd;
 }
+
+input[type="text"], input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
