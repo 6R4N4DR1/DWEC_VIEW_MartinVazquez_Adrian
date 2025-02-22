@@ -1,11 +1,13 @@
 console.log("Script cargado correctamente");
 
 document.addEventListener("DOMContentLoaded", function () {
+    // Inicializa las variables con los datos almacenados en localStorage o valores por defecto
     const estudiantes = JSON.parse(localStorage.getItem("estudiantes")) || [];
     const asignaturas = JSON.parse(localStorage.getItem("asignaturas")) || [];
     const registros = JSON.parse(localStorage.getItem("registros")) || { matriculaciones: [], desmatriculaciones: [] };
     let idCounter = parseInt(localStorage.getItem("idCounter")) || 1;
 
+    // Renderiza la lista de estudiantes en el DOM
     function renderListaEstudiantes() {
         const ulListaEstudiantes = document.getElementById("listaEstudiantes");
         ulListaEstudiantes.innerHTML = ""; // Limpia la lista de estudiantes
@@ -27,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Renderiza la lista de asignaturas en el DOM
     function renderListaAsignaturas() {
         const ulListaAsignaturas = document.getElementById("listaAsignaturas");
         ulListaAsignaturas.innerHTML = ""; // Limpia la lista de asignaturas
@@ -38,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Limpia el formulario de creación de estudiantes
     function limpiarFormCrearEst() {
         document.getElementById("dni").value = "";
         document.getElementById("nombre").value = "";
@@ -50,15 +54,18 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("localidad").value = "";
     }
 
+    // Limpia el formulario de creación de asignaturas
     function limpiarFormCrearAsign() {
         document.getElementById("nombreAsignatura").value = "";
     }
 
+    // Valida el formato del DNI
     function validarDNI(dni) {
         const dniRegex = /^\d{8}[A-Za-z]$/;
         return dniRegex.test(dni);
     }
 
+    // Crea un nuevo estudiante y lo guarda en localStorage
     function crearEstudiante() {
         const dni = document.getElementById("dni").value.trim();
         const nombre = document.getElementById("nombre").value.trim();
@@ -72,22 +79,26 @@ document.addEventListener("DOMContentLoaded", function () {
             localidad: document.getElementById("localidad").value.trim()
         };
 
+        // Verifica que todos los campos estén completos
         if(!dni || !nombre || !edad || !direccion.calle || !direccion.numero || !direccion.codPostal || !direccion.provincia || !direccion.localidad){
             alert("Todos los campos son obligatorios o estas cometiendo faltas ortografía. Prueba de nuevo");
             return;
         }
 
+        // Verifica que el DNI sea válido
         if (!validarDNI(dni)){
             alert("El DNI no es válido. Prueba de nuevo");
             return;
         }
 
+        // Verifica que el estudiante no esté ya registrado
         if(estudiantes.some(est => est.dni === dni)){
             alert("El estudiante ya está registrado. Prueba con otro");
             limpiarFormCrearEst();
             return;
         }
 
+        // Crea el objeto estudiante y lo añade a la lista
         const estudiante = {
             id: `E${idCounter}`,
             dni: dni,
@@ -105,20 +116,24 @@ document.addEventListener("DOMContentLoaded", function () {
         limpiarFormCrearEst();
     }
 
+    // Crea una nueva asignatura y la guarda en localStorage
     function crearAsignatura() {
         const nombreAsign = document.getElementById("nombreAsignatura").value.trim();
 
+        // Verifica que el nombre de la asignatura no esté vacío
         if (!nombreAsign) {
             alert("El nombre de la asignatura es obligatorio. Prueba de nuevo");
             return;
         }
 
+        // Verifica que la asignatura no esté ya registrada
         if (asignaturas.some(asign => asign.nombre === nombreAsign)) {
             alert("La asignatura ya está registrada. Prueba con otro nombre");
             limpiarFormCrearAsign();
             return;
         }
 
+        // Crea el objeto asignatura y lo añade a la lista
         const asignatura = {
             nombre: nombreAsign
         };
@@ -130,14 +145,17 @@ document.addEventListener("DOMContentLoaded", function () {
         limpiarFormCrearAsign();
     }
 
+    // Limpia el formulario de eliminación de estudiantes
     function limpiarFormEliminarEst() {
         document.getElementById("idEstudianteEliminar").value = "";
     }
 
+    // Limpia el formulario de eliminación de asignaturas
     function limpiarFormEliminarAsign() {
         document.getElementById("asignaturaEliminar").value = "";
     }
 
+    // Restablece los IDs de los estudiantes para mantener el orden
     function restablecerIds() {
         estudiantes.forEach((estudiante, index) => {
             estudiante.id = `E${index + 1}`;
@@ -148,6 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
         renderListaEstudiantes();
     }
 
+    // Elimina un estudiante por su ID
     function eliminarEstudiante() {
         const idEstudianteEliminar = document.getElementById("idEstudianteEliminar").value.trim();
     
@@ -172,6 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
         limpiarFormEliminarEst();
     }
 
+    // Elimina una asignatura por su nombre
     function eliminarAsignatura() {
         const nombreAsignaturaEliminar = document.getElementById("asignaturaEliminar").value.trim();
     
@@ -206,6 +226,7 @@ document.addEventListener("DOMContentLoaded", function () {
         limpiarFormEliminarAsign();
     }
 
+    // Registra una acción de matriculación o desmatriculación
     function registrarAccion(tipo, estudianteId, asignaturaNombre) {
         const fecha = new Date().toLocaleDateString('es-ES', {
             year: 'numeric',
@@ -236,6 +257,7 @@ document.addEventListener("DOMContentLoaded", function () {
         mostrarRegistros();
     }
 
+    // Muestra los registros de matriculaciones y desmatriculaciones
     function mostrarRegistros() {
         const ulRegistros = document.getElementById("listaRegistros");
         ulRegistros.innerHTML = "";
@@ -249,6 +271,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Limpia los registros de matriculaciones y desmatriculaciones
     function limpiarRegistros() {
         registros.matriculaciones = [];
         registros.desmatriculaciones = [];
@@ -256,16 +279,19 @@ document.addEventListener("DOMContentLoaded", function () {
         mostrarRegistros();
     }
 
+    // Limpia el formulario de matriculación de estudiantes
     function limpiarFormMatricularEst() {
         document.getElementById("idEstudianteMatricular").value = "";
         document.getElementById("asignaturaMatricular").value = "";
     }
 
+    // Limpia el formulario de desmatriculación de estudiantes
     function limpiarFormDesmatricularEst() {
         document.getElementById("idEstudianteDesmatricular").value = "";
         document.getElementById("asignaturaDesmatricular").value = "";
     }
 
+    // Matricula un estudiante en una asignatura
     function matricularEstudiante() {
         const idEstudianteMatricular = document.getElementById("idEstudianteMatricular").value.trim();
         const nombreAsignaturaMatricular = document.getElementById("asignaturaMatricular").value.trim();
@@ -310,6 +336,7 @@ document.addEventListener("DOMContentLoaded", function () {
         limpiarFormMatricularEst();
     }
 
+    // Desmatricula un estudiante de una asignatura
     function desmatricularEstudiante() {
         const idEstudianteDesmatricular = document.getElementById("idEstudianteDesmatricular").value.trim();
         const nombreAsignaturaDesmatricular = document.getElementById("asignaturaDesmatricular").value.trim();
@@ -343,12 +370,14 @@ document.addEventListener("DOMContentLoaded", function () {
         limpiarFormDesmatricularEst();
     }
 
+    // Limpia el formulario de calificación de estudiantes
     function limpiarFormCalificarEst() {
         document.getElementById("idEstudianteCalificar").value = "";
         document.getElementById("asignaturaCalificar").value = "";
         document.getElementById("nota").value = "";
     }
 
+    // Añade una calificación a un estudiante en una asignatura
     function calificarEstudiante() {
         const idEstudianteCalificar = document.getElementById("idEstudianteCalificar").value.trim();
         const nombreAsignaturaCalificar = document.getElementById("asignaturaCalificar").value.trim();
@@ -383,10 +412,12 @@ document.addEventListener("DOMContentLoaded", function () {
         limpiarFormCalificarEst();
     }
 
+    // Limpia el formulario de cálculo de promedio de estudiantes
     function limpiarFormPromedioEst() {
         document.getElementById("idEstudiantePromedio").value = "";
     }
 
+    // Calcula el promedio de un estudiante
     function promedioEstudiante() {
         const idEstudiantePromedio = document.getElementById("idEstudiantePromedio").value.trim();
     
@@ -424,6 +455,7 @@ document.addEventListener("DOMContentLoaded", function () {
         limpiarFormPromedioEst();
     }
 
+    // Calcula el promedio general de todos los estudiantes
     function gpaGeneral() {
         const allCalificaciones = estudiantes.flatMap(estudiante => 
             estudiante.asignaturas ? estudiante.asignaturas.flatMap(asign => asign[1]) : []
@@ -440,6 +472,7 @@ document.addEventListener("DOMContentLoaded", function () {
         alert(`El GPA de notas de todos los estudiantes es: ${promedio}`);
     }
 
+    // Añade eventos a los botones para ejecutar las funciones correspondientes
     document.getElementById("crearEstudiante").addEventListener("click", crearEstudiante);
     document.getElementById("crearAsignatura").addEventListener("click", crearAsignatura);
     document.getElementById("eliminarEstudiante").addEventListener("click", eliminarEstudiante);
@@ -450,15 +483,17 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("promedioEstudiante").addEventListener("click", promedioEstudiante);
     document.getElementById("promedioGeneral").addEventListener("click", gpaGeneral);
 
+    // Limpiar el localStorage
     document.getElementById("clearLocalStorage").addEventListener("click", function() {
         localStorage.clear();
         alert("LocalStorage limpiado");
         location.reload(); // Recargar la página para aplicar los cambios
     });
 
+    // Añade un evento al botón para limpiar los registros
     document.getElementById("limpiarRegistros").addEventListener("click", limpiarRegistros);
 
     renderListaEstudiantes(); // Llamar a la función render para mostrar la lista de estudiantes
     renderListaAsignaturas(); // Llamar a la función render para mostrar la lista de asignaturas
-    mostrarRegistros();
+    mostrarRegistros(); // Llama a la función para mostrar los registros de matriculaciones y desmatriculaciones
 });
