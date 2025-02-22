@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SGAEA</title>
     <link rel="stylesheet" href="css/estilos.css">
-    <script src="js/script5.js" defer></script>
+    <script src="js/script.js" defer></script>
 </head>
 <body>
     <div id="formulario">
         <div id="sidebarIzq">
-            <h1>SISTEMA DE GESTI&Oacute;N ACAD&Eacute;MICA</h1>
+            <h1>📚 SISTEMA DE GESTI&Oacute;N ACAD&Eacute;MICA 📚</h1>
             <div class="form-grid">
                 <div class="contenedor">
                     <h2>Crear...</h2>
                     <div class="caja">
                         <h3>Estudiante</h3>
                         <h4>Persona</h4>
+                        <input type="text" id="dni" placeholder="DNI">
                         <input type="text" id="nombre" placeholder="Nombre">
                         <input type="number" id="edad" placeholder="Edad">
 
@@ -54,24 +55,30 @@
 
                 <div class="contenedor">
                     <h2>Matricular estudiante</h2>
-                    <input type="text" id="idEstudianteMatricular" placeholder="ID estudiante a matricular">
-                    <input type="text" id="asignaturaMatricular" placeholder="Asignatura en la que se matricular&aacute;">
-                    <button id="matricularEstudianteAsignatura">Matricular</button>
+                    <div class="caja">
+                        <input type="text" id="idEstudianteMatricular" placeholder="ID estudiante a matricular">
+                        <input type="text" id="asignaturaMatricular" placeholder="Asignatura en la que se matricular&aacute;">
+                        <button id="matricularEstudianteAsignatura">Matricular</button>
+                    </div>
                 </div>
 
                 <div class="contenedor">
                     <h2>Desmatricular estudiante</h2>
-                    <input type="text" id="idEstudianteDesmatricular" placeholder="ID estudiante a desmatricular">
-                    <input type="text" id="asignaturaDesmatricular" placeholder="Asignatura en la que se desmatricular&aacute;">
-                    <button id="desmatricularEstudianteAsignatura">Desmatricular</button>
+                    <div class="caja">
+                        <input type="text" id="idEstudianteDesmatricular" placeholder="ID estudiante a desmatricular">
+                        <input type="text" id="asignaturaDesmatricular" placeholder="Asignatura en la que se desmatricular&aacute;">
+                        <button id="desmatricularEstudianteAsignatura">Desmatricular</button>
+                    </div>
                 </div>
 
                 <div class="contenedor">
                     <h2>Calificar estudiante</h2>
-                    <input type="text" id="idEstudianteCalificar" placeholder="ID estudiante a calificar">
-                    <input type="text" id="asignaturaCalificar" placeholder="Asignatura que se calificar&aacute;">
-                    <input type="number" id="nota" placeholder="Nota">
-                    <button id="calificarEstudianteAsignatura">Calificar</button>
+                    <div class="caja">
+                        <input type="text" id="idEstudianteCalificar" placeholder="ID estudiante a calificar">
+                        <input type="text" id="asignaturaCalificar" placeholder="Asignatura que se calificar&aacute;">
+                        <input type="number" id="nota" placeholder="Nota">
+                        <button id="calificarEstudianteAsignatura">Calificar</button>
+                    </div>
                 </div>
 
                 <div class="contenedor">
@@ -91,14 +98,25 @@
         </div>
 
         <div id="sidebarDer">
-            <div class="drop">
-                <h2>Estudiantes registrados</h2>
-                <ul id="listaEstudiantes"></ul>
+            <div class="view">
+                <button id="clearLocalStorage">Limpiar listas</button>
+                <div class="drop">
+                    <h2>Estudiantes registrados</h2>
+                    <ul id="listaEstudiantes"></ul>
+                </div>
+
+                <div class="drop">
+                    <h2>Asignaturas</h2>
+                    <ul id="listaAsignaturas"></ul>
+                </div>
             </div>
 
-            <div class="drop">
-                <h2>Asignaturas</h2>
-                <ul id="listaAsignaturas"></ul>
+            <div class="view">
+                <button id="limpiarRegistros">Borrar cach&eacute; de registros</button>
+                <div class="drop">
+                    <h2>Registros de Matriculaciones y Desmatriculaciones</h2>
+                    <ul id="listaRegistros"></ul>
+                </div>
             </div>
         </div>
     </div>

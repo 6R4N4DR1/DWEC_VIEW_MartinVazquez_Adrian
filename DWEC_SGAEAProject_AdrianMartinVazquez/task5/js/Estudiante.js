@@ -1,4 +1,4 @@
-import { Persona } from "./Persona.js";
+import Persona from "./Persona.js";
 
 /** 
  * Clase Estudiante que hereda de Persona
@@ -17,10 +17,19 @@ class Estudiante extends Persona{
      * @param {number} edad - La edad del estudiante
      * @param {Direccion} direccion - La dirección del estudiante, instancia de la clase Dirección
      */
-    constructor(id, nombre, edad, direccion) {
+    constructor(nombre, edad, direccion) {
         super(nombre, edad, direccion); // Llamada al constructor de Persona
         
-        this.#id = id; // Asigna un ID único al estudiante
+        let numId = 1;
+
+        // Busca el primer ID disponible
+        while(Estudiante.idUsados.includes(numId)){
+            numId++;
+        }
+
+        Estudiante.idUsados.push(numId); // Agrega el ID al registro de IDs usados
+        this.#id = "E" + numId; // Asigna un ID único al estudiante
+        
         this.#asignaturas = []; // Inicialización del array de asignaturas
         this.#registros = []; // Inicialización del array de registros
     }
