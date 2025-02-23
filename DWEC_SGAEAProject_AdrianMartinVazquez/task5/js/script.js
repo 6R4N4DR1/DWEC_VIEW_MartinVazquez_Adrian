@@ -80,14 +80,42 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
         // Verifica que todos los campos estén completos
-        if(!dni || !nombre || !edad || !direccion.calle || !direccion.numero || !direccion.codPostal || !direccion.provincia || !direccion.localidad){
-            alert("Todos los campos son obligatorios o estas cometiendo faltas ortografía. Prueba de nuevo");
+        if (!dni) {
+            alert("El campo DNI es obligatorio.");
+            return;
+        }
+        if (!nombre) {
+            alert("El campo Nombre es obligatorio.");
+            return;
+        }
+        if (!edad) {
+            alert("El campo Edad es obligatorio.");
+            return;
+        }
+        if (!direccion.calle) {
+            alert("El campo Calle es obligatorio.");
+            return;
+        }
+        if (!direccion.numero) {
+            alert("El campo Número es obligatorio.");
+            return;
+        }
+        if (!direccion.codPostal) {
+            alert("El campo Código Postal es obligatorio.");
+            return;
+        }
+        if (!direccion.provincia) {
+            alert("El campo Provincia es obligatorio.");
+            return;
+        }
+        if (!direccion.localidad) {
+            alert("El campo Localidad es obligatorio.");
             return;
         }
 
         // Verifica que el DNI sea válido
         if (!validarDNI(dni)){
-            alert("El DNI no es válido. Prueba de nuevo");
+            alert("El DNI no es válido.");
             return;
         }
 
@@ -122,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Verifica que el nombre de la asignatura no esté vacío
         if (!nombreAsign) {
-            alert("El nombre de la asignatura es obligatorio. Prueba de nuevo");
+            alert("El nombre de la asignatura es obligatorio.");
             return;
         }
 
@@ -171,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const idEstudianteEliminar = document.getElementById("idEstudianteEliminar").value.trim();
     
         if (!idEstudianteEliminar) {
-            alert("El ID del estudiante es obligatorio. Prueba de nuevo");
+            alert("El ID del estudiante es obligatorio.");
             return;
         }
     
@@ -196,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const nombreAsignaturaEliminar = document.getElementById("asignaturaEliminar").value.trim();
     
         if (!nombreAsignaturaEliminar) {
-            alert("El nombre de la asignatura es obligatorio. Prueba de nuevo");
+            alert("El nombre de la asignatura es obligatorio.");
             return;
         }
     
@@ -296,8 +324,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const idEstudianteMatricular = document.getElementById("idEstudianteMatricular").value.trim();
         const nombreAsignaturaMatricular = document.getElementById("asignaturaMatricular").value.trim();
 
-        if (!idEstudianteMatricular || !nombreAsignaturaMatricular) {
-            alert("El ID del estudiante y el nombre de la asignatura son obligatorios. Prueba de nuevo");
+        if (!idEstudianteMatricular) {
+            alert("El ID del estudiante es obligatorio.");
+            return;
+        }
+
+        if (!nombreAsignaturaMatricular) {
+            alert("El nombre de la asignatura es obligatorio.");
             return;
         }
 
@@ -341,8 +374,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const idEstudianteDesmatricular = document.getElementById("idEstudianteDesmatricular").value.trim();
         const nombreAsignaturaDesmatricular = document.getElementById("asignaturaDesmatricular").value.trim();
 
-        if (!idEstudianteDesmatricular || !nombreAsignaturaDesmatricular) {
-            alert("El ID del estudiante y el nombre de la asignatura son obligatorios. Prueba de nuevo");
+        if (!idEstudianteDesmatricular) {
+            alert("El ID del estudiante es obligatorio.");
+            return;
+        }
+
+        if (!nombreAsignaturaDesmatricular) {
+            alert("El nombre de la asignatura es obligatorio.");
             return;
         }
 
@@ -383,8 +421,16 @@ document.addEventListener("DOMContentLoaded", function () {
         const nombreAsignaturaCalificar = document.getElementById("asignaturaCalificar").value.trim();
         const nota = parseFloat(document.getElementById("nota").value.trim());
     
-        if (!idEstudianteCalificar || !nombreAsignaturaCalificar || isNaN(nota)) {
-            alert("El ID del estudiante, el nombre de la asignatura y la nota son obligatorios. Prueba de nuevo");
+        if (!idEstudianteCalificar) {
+            alert("El campo ID del estudiante es obligatorio.");
+            return;
+        }
+        if (!nombreAsignaturaCalificar) {
+            alert("El campo Nombre de la asignatura es obligatorio.");
+            return;
+        }
+        if (isNaN(nota)) {
+            alert("El campo Nota es obligatorio y debe ser un número.");
             return;
         }
     
@@ -422,7 +468,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const idEstudiantePromedio = document.getElementById("idEstudiantePromedio").value.trim();
     
         if (!idEstudiantePromedio) {
-            alert("El ID del estudiante es obligatorio. Prueba de nuevo");
+            alert("El ID del estudiante es obligatorio.");
             return;
         }
     

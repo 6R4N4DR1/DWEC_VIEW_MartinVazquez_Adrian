@@ -17,22 +17,32 @@
                     <div class="caja">
                         <h3>Estudiante</h3>
                         <h4>Persona</h4>
+                        <label for="dni">DNI</label>
                         <input type="text" id="dni" placeholder="DNI">
+                        <label for="nombre">Nombre</label>
                         <input type="text" id="nombre" placeholder="Nombre">
+                        <label for="edad">Edad</label>
                         <input type="number" id="edad" placeholder="Edad">
 
                         <h4>Direcci&oacute;n</h4>
+                        <label for="calle">Calle</label>
                         <input type="text" id="calle" placeholder="Calle">
+                        <label for="numero">N&uacute;mero</label>
                         <input type="number" id="numero" placeholder="N&uacute;mero">
+                        <label for="piso">Piso</label>
                         <input type="text" id="piso" placeholder="Piso">
+                        <label for="codPostal">C&oacute;digo Postal</label>
                         <input type="text" id="codPostal" placeholder="C&oacute;digo Postal">
+                        <label for="provincia">Provincia</label>
                         <input type="text" id="provincia" placeholder="Provincia">
+                        <label for="localidad">Localidad</label>
                         <input type="text" id="localidad" placeholder="Localidad">
                         <button id="crearEstudiante">Crear estudiante</button>
                     </div>
                     
                     <div class="caja">
                         <h3>Asignatura</h3>
+                        <label for="nombreAsignatura">Nombre de asignatura</label>
                         <input type="text" id="nombreAsignatura" placeholder="Nombre de asignatura">
                         <button id="crearAsignatura">Crear asignatura</button>
                     </div>
@@ -42,12 +52,14 @@
                     <h2>Eliminar...</h2>
                     <div class="caja">
                         <h3>Eliminar estudiante</h3>
+                        <label for="idEstudianteEliminar">ID estudiante</label>
                         <input type="text" id="idEstudianteEliminar" placeholder="ID estudiante a eliminar">
                         <button id="eliminarEstudiante">Eliminar</button>
                     </div>
 
                     <div class="caja">
                         <h3>Eliminar asignatura</h3>
+                        <label for="asignaturaEliminar">Nombre de asignatura</label>
                         <input type="text" id="asignaturaEliminar" placeholder="Asignatura a eliminar">
                         <button id="eliminarAsignatura">Eliminar</button>
                     </div>
@@ -56,7 +68,9 @@
                 <div class="contenedor">
                     <h2>Matricular estudiante</h2>
                     <div class="caja">
+                        <label for="idEstudianteMatricular">ID estudiante</label>
                         <input type="text" id="idEstudianteMatricular" placeholder="ID estudiante a matricular">
+                        <label for="asignaturaMatricular">Nombre de asignatura</label>
                         <input type="text" id="asignaturaMatricular" placeholder="Asignatura en la que se matricular&aacute;">
                         <button id="matricularEstudianteAsignatura">Matricular</button>
                     </div>
@@ -65,7 +79,9 @@
                 <div class="contenedor">
                     <h2>Desmatricular estudiante</h2>
                     <div class="caja">
+                        <label for="idEstudianteDesmatricular">ID estudiante</label>
                         <input type="text" id="idEstudianteDesmatricular" placeholder="ID estudiante a desmatricular">
+                        <label for="asignaturaDesmatricular">Nombre de asignatura</label>
                         <input type="text" id="asignaturaDesmatricular" placeholder="Asignatura en la que se desmatricular&aacute;">
                         <button id="desmatricularEstudianteAsignatura">Desmatricular</button>
                     </div>
@@ -74,8 +90,11 @@
                 <div class="contenedor">
                     <h2>Calificar estudiante</h2>
                     <div class="caja">
+                        <label for="idEstudianteCalificar">ID estudiante</label>
                         <input type="text" id="idEstudianteCalificar" placeholder="ID estudiante a calificar">
+                        <label for="asignaturaCalificar">Nombre de asignatura</label>
                         <input type="text" id="asignaturaCalificar" placeholder="Asignatura que se calificar&aacute;">
+                        <label for="nota">Calificaci&oacute;n</label>
                         <input type="number" id="nota" placeholder="Nota">
                         <button id="calificarEstudianteAsignatura">Calificar</button>
                     </div>
@@ -85,6 +104,7 @@
                     <h2>Promedios...</h2>
                     <div class="caja">
                         <h3>Promedio de un estudiante</h3>
+                        <label for="idEstudiantePromedio">ID estudiante</label>
                         <input type="text" id="idEstudiantePromedio" placeholder="ID estudiante a hacer el promedio">
                         <button id="promedioEstudiante">Calcular</button>
                     </div>
@@ -101,12 +121,12 @@
             <div class="view">
                 <button id="clearLocalStorage">Limpiar listas</button>
                 <div class="drop">
-                    <h2>Estudiantes registrados</h2>
+                    <h2>Lista de estudiantes registrados</h2>
                     <ul id="listaEstudiantes"></ul>
                 </div>
 
                 <div class="drop">
-                    <h2>Asignaturas</h2>
+                    <h2>Lista de asignaturas</h2>
                     <ul id="listaAsignaturas"></ul>
                 </div>
             </div>
