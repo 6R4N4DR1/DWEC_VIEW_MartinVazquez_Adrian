@@ -65,7 +65,7 @@
                                 <input type="text" id="localidad" placeholder="Introduce la localidad" required>
                                 <span class="error" id="localidadError"></span>
                             </div>
-                            <button id="crearEstudiante">Crear estudiante</button>
+                            <button id="crearEstudiante" type="submit">Crear estudiante</button>
                         </form>
                     </div>
                     
@@ -77,7 +77,7 @@
                                 <input type="text" id="nombreAsignatura" placeholder="Introduce el nombre de la asignatura" required>
                                 <span class="error" id="nombreAsignaturaError"></span>
                             </div>
-                            <button id="crearAsignatura">Crear asignatura</button>
+                            <button id="crearAsignatura" type="submit">Crear asignatura</button>
                         </form>
                     </div>
                 </div>
@@ -92,7 +92,7 @@
                                 <input type="text" id="idEstudianteEliminar" placeholder="Introduce el ID del estudiante a eliminar" required pattern="^E\d+$">
                                 <span class="error" id="idEstudianteEliminarError"></span>
                             </div>
-                            <button id="eliminarEstudiante">Eliminar</button>
+                            <button id="eliminarEstudiante" type="submit">Eliminar</button>
                         </form>
                     </div>
 
@@ -104,7 +104,7 @@
                                 <input type="text" id="asignaturaEliminar" placeholder="Introduce la asignatura a eliminar" required>
                                 <span class="error" id="asignaturaEliminarError"></span>
                             </div>
-                            <button id="eliminarAsignatura">Eliminar</button>
+                            <button id="eliminarAsignatura" type="submit">Eliminar</button>
                         </form>
                     </div>
                 </div>
@@ -123,7 +123,7 @@
                                 <input type="text" id="asignaturaMatricular" placeholder="Introduce la asignatura en la que se matriculará" required>
                                 <span class="error" id="asignaturaMatricularError"></span>
                             </div>
-                            <button id="matricularEstudianteAsignatura">Matricular</button>
+                            <button id="matricularEstudianteAsignatura" type="submit">Matricular</button>
                         </form>
                     </div>
                 </div>
@@ -142,7 +142,7 @@
                                 <input type="text" id="asignaturaDesmatricular" placeholder="Introduce la asignatura en la que se desmatriculará" required>
                                 <span class="error" id="asignaturaDesmatricularError"></span>
                             </div>
-                            <button id="desmatricularEstudianteAsignatura">Desmatricular</button>
+                            <button id="desmatricularEstudianteAsignatura" type="submit">Desmatricular</button>
                         </form>
                     </div>
                 </div>
@@ -166,7 +166,7 @@
                                 <input type="number" id="nota" placeholder="Introduce la nota" required pattern="^\d+$">
                                 <span class="error" id="notaError"></span>
                             </div>
-                            <button id="calificarEstudianteAsignatura">Calificar</button>
+                            <button id="calificarEstudianteAsignatura" type="submit">Calificar</button>
                         </form>
                     </div>
                 </div>
@@ -181,13 +181,13 @@
                                 <input type="text" id="idEstudiantePromedio" placeholder="Introduce el ID del estudiante para calcular el promedio" required pattern="^E\d+$">
                                 <span class="error" id="idEstudiantePromedioError"></span>
                             </div>
-                            <button id="promedioEstudiante">Calcular</button>
+                            <button id="promedioEstudiante" type="submit">Calcular</button>
                         </form>
                     </div>
                     
                     <div class="caja">
                         <h3>Promedio general</h3>
-                        <button id="promedioGeneral">Calcular</button>
+                        <button id="promedioGeneral" type="button">Calcular</button>
                     </div>
                 </div>
             </div>
@@ -195,7 +195,7 @@
 
         <div id="sidebarDer">
             <div class="view">
-                <button id="clearLocalStorage">Limpiar listas</button>
+                <button id="clearLocalStorage" type="button">Limpiar listas</button>
                 <div class="drop">
                     <h2>Lista de estudiantes registrados</h2>
                     <ul id="listaEstudiantes"></ul>
@@ -208,7 +208,7 @@
             </div>
 
             <div class="view">
-                <button id="limpiarRegistros">Borrar cach&eacute; de registros</button>
+                <button id="limpiarRegistros" type="button">Borrar cach&eacute; de registros</button>
                 <div class="drop">
                     <h2>Registros de Matriculaciones y Desmatriculaciones</h2>
                     <ul id="listaRegistros"></ul>
