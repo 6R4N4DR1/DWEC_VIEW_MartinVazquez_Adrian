@@ -518,15 +518,184 @@ document.addEventListener("DOMContentLoaded", function () {
         alert(`El GPA de notas de todos los estudiantes es: ${promedio}`);
     }
 
+    // Validación en tiempo real
+    function validarCampo(campo, mensajeError, regex = null) {
+        campo.addEventListener("input", function () {
+            if (campo.validity.valueMissing) {
+                mensajeError.textContent = "Este campo es obligatorio.";
+                mensajeError.style.display = "block";
+            } else if (campo.validity.patternMismatch) {
+                mensajeError.textContent = "Formato incorrecto.";
+                mensajeError.style.display = "block";
+            } else if (campo.validity.typeMismatch) {
+                mensajeError.textContent = "Tipo de dato incorrecto.";
+                mensajeError.style.display = "block";
+            } else if (campo.validity.rangeOverflow) {
+                mensajeError.textContent = `El valor debe ser menor o igual a ${campo.max}.`;
+                mensajeError.style.display = "block";
+            } else if (campo.validity.rangeUnderflow) {
+                mensajeError.textContent = `El valor debe ser mayor o igual a ${campo.min}.`;
+                mensajeError.style.display = "block";
+            } else if (regex && !regex.test(campo.value)) {
+                mensajeError.textContent = "Formato incorrecto.";
+                mensajeError.style.display = "block";
+            } else {
+                mensajeError.style.display = "none";
+            }
+        });
+    }
+
+    function mostrarErroresFormulario(formulario) {
+        const campos = formulario.querySelectorAll("input");
+        campos.forEach(campo => {
+            const mensajeError = campo.nextElementSibling;
+            if (campo.validity.valueMissing) {
+                mensajeError.textContent = "Este campo es obligatorio.";
+                mensajeError.style.display = "block";
+            } else if (campo.validity.patternMismatch) {
+                mensajeError.textContent = "Formato incorrecto.";
+                mensajeError.style.display = "block";
+            } else if (campo.validity.typeMismatch) {
+                mensajeError.textContent = "Tipo de dato incorrecto.";
+                mensajeError.style.display = "block";
+            } else if (campo.validity.rangeOverflow) {
+                mensajeError.textContent = `El valor debe ser menor o igual a ${campo.max}.`;
+                mensajeError.style.display = "block";
+            } else if (campo.validity.rangeUnderflow) {
+                mensajeError.textContent = `El valor debe ser mayor o igual a ${campo.min}.`;
+                mensajeError.style.display = "block";
+            } else if (campo.nextElementSibling && campo.nextElementSibling.tagName === "SPAN") {
+                mensajeError.textContent = "Formato incorrecto.";
+                mensajeError.style.display = "block";
+            }
+        });
+    }
+
+    // Validar campos del formulario de creación de estudiantes
+    validarCampo(document.getElementById("dni"), document.getElementById("dniError"), /^\d{8}[A-Za-z]$/);
+    validarCampo(document.getElementById("nombre"), document.getElementById("nombreError"));
+    validarCampo(document.getElementById("edad"), document.getElementById("edadError"), /^\d+$/);
+    validarCampo(document.getElementById("calle"), document.getElementById("calleError"));
+    validarCampo(document.getElementById("numero"), document.getElementById("numeroError"), /^\d+$/);
+    validarCampo(document.getElementById("piso"), document.getElementById("pisoError"), /^(Bajo|bajo|BAJO|-?\d+)$/);
+    validarCampo(document.getElementById("codPostal"), document.getElementById("codPostalError"), /^\d{5}$/);
+    validarCampo(document.getElementById("provincia"), document.getElementById("provinciaError"));
+    validarCampo(document.getElementById("localidad"), document.getElementById("localidadError"));
+
+    // Validar campos del formulario de creación de asignaturas
+    validarCampo(document.getElementById("nombreAsignatura"), document.getElementById("nombreAsignaturaError"));
+
+    // Validar campos del formulario de eliminación de estudiantes
+    validarCampo(document.getElementById("idEstudianteEliminar"), document.getElementById("idEstudianteEliminarError"), /^E\d+$/);
+
+    // Validar campos del formulario de eliminación de asignaturas
+    validarCampo(document.getElementById("asignaturaEliminar"), document.getElementById("asignaturaEliminarError"));
+
+    // Validar campos del formulario de matriculación de estudiantes
+    validarCampo(document.getElementById("idEstudianteMatricular"), document.getElementById("idEstudianteMatricularError"), /^E\d+$/);
+    validarCampo(document.getElementById("asignaturaMatricular"), document.getElementById("asignaturaMatricularError"));
+
+    // Validar campos del formulario de desmatriculación de estudiantes
+    validarCampo(document.getElementById("idEstudianteDesmatricular"), document.getElementById("idEstudianteDesmatricularError"), /^E\d+$/);
+    validarCampo(document.getElementById("asignaturaDesmatricular"), document.getElementById("asignaturaDesmatricularError"));
+
+    // Validar campos del formulario de calificación de estudiantes
+    validarCampo(document.getElementById("idEstudianteCalificar"), document.getElementById("idEstudianteCalificarError"), /^E\d+$/);
+    validarCampo(document.getElementById("asignaturaCalificar"), document.getElementById("asignaturaCalificarError"));
+    validarCampo(document.getElementById("nota"), document.getElementById("notaError"), /^\d+$/);
+
+    // Validar campos del formulario de cálculo de promedio de estudiantes
+    validarCampo(document.getElementById("idEstudiantePromedio"), document.getElementById("idEstudiantePromedioError"), /^E\d+$/);
+
     // Añade eventos a los botones para ejecutar las funciones correspondientes
-    document.getElementById("crearEstudiante").addEventListener("click", crearEstudiante);
-    document.getElementById("crearAsignatura").addEventListener("click", crearAsignatura);
-    document.getElementById("eliminarEstudiante").addEventListener("click", eliminarEstudiante);
-    document.getElementById("eliminarAsignatura").addEventListener("click", eliminarAsignatura);
-    document.getElementById("matricularEstudianteAsignatura").addEventListener("click", matricularEstudiante);
-    document.getElementById("desmatricularEstudianteAsignatura").addEventListener("click", desmatricularEstudiante);
-    document.getElementById("calificarEstudianteAsignatura").addEventListener("click", calificarEstudiante);
-    document.getElementById("promedioEstudiante").addEventListener("click", promedioEstudiante);
+    document.getElementById("crearEstudiante").addEventListener("click", function(event) {
+        event.preventDefault();
+        const formulario = document.getElementById("formularioCrearEstudiante");
+        if (formulario.checkValidity()) {
+            crearEstudiante();
+        } else {
+            mostrarErroresFormulario(formulario);
+            alert("Por favor, completa todos los campos correctamente.");
+        }
+    });
+
+    document.getElementById("crearAsignatura").addEventListener("click", function(event) {
+        event.preventDefault();
+        const formulario = document.getElementById("formularioCrearAsignatura");
+        if (formulario.checkValidity()) {
+            crearAsignatura();
+        } else {
+            mostrarErroresFormulario(formulario);
+            alert("Por favor, completa todos los campos correctamente.");
+        }
+    });
+
+    document.getElementById("eliminarEstudiante").addEventListener("click", function(event) {
+        event.preventDefault();
+        const formulario = document.getElementById("formularioEliminarEstudiante");
+        if (formulario.checkValidity()) {
+            eliminarEstudiante();
+        } else {
+            mostrarErroresFormulario(formulario);
+            alert("Por favor, completa todos los campos correctamente.");
+        }
+    });
+
+    document.getElementById("eliminarAsignatura").addEventListener("click", function(event) {
+        event.preventDefault();
+        const formulario = document.getElementById("formularioEliminarAsignatura");
+        if (formulario.checkValidity()) {
+            eliminarAsignatura();
+        } else {
+            mostrarErroresFormulario(formulario);
+            alert("Por favor, completa todos los campos correctamente.");
+        }
+    });
+
+    document.getElementById("matricularEstudianteAsignatura").addEventListener("click", function(event) {
+        event.preventDefault();
+        const formulario = document.getElementById("formularioMatricularEstudiante");
+        if (formulario.checkValidity()) {
+            matricularEstudiante();
+        } else {
+            mostrarErroresFormulario(formulario);
+            alert("Por favor, completa todos los campos correctamente.");
+        }
+    });
+
+    document.getElementById("desmatricularEstudianteAsignatura").addEventListener("click", function(event) {
+        event.preventDefault();
+        const formulario = document.getElementById("formularioDesmatricularEstudiante");
+        if (formulario.checkValidity()) {
+            desmatricularEstudiante();
+        } else {
+            mostrarErroresFormulario(formulario);
+            alert("Por favor, completa todos los campos correctamente.");
+        }
+    });
+
+    document.getElementById("calificarEstudianteAsignatura").addEventListener("click", function(event) {
+        event.preventDefault();
+        const formulario = document.getElementById("formularioCalificarEstudiante");
+        if (formulario.checkValidity()) {
+            calificarEstudiante();
+        } else {
+            mostrarErroresFormulario(formulario);
+            alert("Por favor, completa todos los campos correctamente.");
+        }
+    });
+
+    document.getElementById("promedioEstudiante").addEventListener("click", function(event) {
+        event.preventDefault();
+        const formulario = document.getElementById("formularioPromedioEstudiante");
+        if (formulario.checkValidity()) {
+            promedioEstudiante();
+        } else {
+            mostrarErroresFormulario(formulario);
+            alert("Por favor, completa todos los campos correctamente.");
+        }
+    });
+
     document.getElementById("promedioGeneral").addEventListener("click", gpaGeneral);
 
     // Limpiar el localStorage

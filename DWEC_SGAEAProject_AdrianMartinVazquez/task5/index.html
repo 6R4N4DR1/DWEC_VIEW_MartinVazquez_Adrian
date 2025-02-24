@@ -17,54 +17,68 @@
                     <div class="caja">
                         <h3>Estudiante</h3>
                         <h4>Persona</h4>
-                        <div class="form-group">
-                            <label for="dni">DNI</label>
-                            <input type="text" id="dni" placeholder="Introduce el DNI">
-                        </div>
-                        <div class="form-group">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" id="nombre" placeholder="Introduce el nombre">
-                        </div>
-                        <div class="form-group">
-                            <label for="edad">Edad</label>
-                            <input type="number" id="edad" placeholder="Introduce la edad">
-                        </div>
+                        <form id="formularioCrearEstudiante">
+                            <div class="form-group">
+                                <label for="dni">DNI</label>
+                                <input type="text" id="dni" placeholder="Introduce el DNI" required pattern="\d{8}[A-Za-z]">
+                                <span class="error" id="dniError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" id="nombre" placeholder="Introduce el nombre" required>
+                                <span class="error" id="nombreError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="edad">Edad</label>
+                                <input type="number" id="edad" placeholder="Introduce la edad" required pattern="^\d+$" min="1" max="99">
+                                <span class="error" id="edadError"></span>
+                            </div>
 
-                        <h4>Direcci&oacute;n</h4>
-                        <div class="form-group">
-                            <label for="calle">Calle</label>
-                            <input type="text" id="calle" placeholder="Introduce la calle">
-                        </div>
-                        <div class="form-group">
-                            <label for="numero">N&uacute;mero</label>
-                            <input type="number" id="numero" placeholder="Introduce el número">
-                        </div>
-                        <div class="form-group">
-                            <label for="piso">Piso</label>
-                            <input type="text" id="piso" placeholder="Introduce el piso">
-                        </div>
-                        <div class="form-group">
-                            <label for="codPostal">C&oacute;digo Postal</label>
-                            <input type="text" id="codPostal" placeholder="Introduce el código postal">
-                        </div>
-                        <div class="form-group">
-                            <label for="provincia">Provincia</label>
-                            <input type="text" id="provincia" placeholder="Introduce la provincia">
-                        </div>
-                        <div class="form-group">
-                            <label for="localidad">Localidad</label>
-                            <input type="text" id="localidad" placeholder="Introduce la localidad">
-                        </div>
-                        <button id="crearEstudiante">Crear estudiante</button>
+                            <h4>Direcci&oacute;n</h4>
+                            <div class="form-group">
+                                <label for="calle">Calle</label>
+                                <input type="text" id="calle" placeholder="Introduce la calle" required>
+                                <span class="error" id="calleError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="numero">N&uacute;mero</label>
+                                <input type="number" id="numero" placeholder="Introduce el número" required pattern="^\d+$" min="1">
+                                <span class="error" id="numeroError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="piso">Piso</label>
+                                <input type="text" id="piso" placeholder="Introduce el piso" pattern="^(Bajo|bajo|BAJO|-?\d+)$">
+                                <span class="error" id="pisoError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="codPostal">C&oacute;digo Postal</label>
+                                <input type="text" id="codPostal" placeholder="Introduce el código postal" required pattern="\d{5}">
+                                <span class="error" id="codPostalError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="provincia">Provincia</label>
+                                <input type="text" id="provincia" placeholder="Introduce la provincia" required>
+                                <span class="error" id="provinciaError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="localidad">Localidad</label>
+                                <input type="text" id="localidad" placeholder="Introduce la localidad" required>
+                                <span class="error" id="localidadError"></span>
+                            </div>
+                            <button id="crearEstudiante">Crear estudiante</button>
+                        </form>
                     </div>
                     
                     <div class="caja">
                         <h3>Asignatura</h3>
-                        <div class="form-group">
-                            <label for="nombreAsignatura">Nombre de asignatura</label>
-                            <input type="text" id="nombreAsignatura" placeholder="Introduce el nombre de la asignatura">
-                        </div>
-                        <button id="crearAsignatura">Crear asignatura</button>
+                        <form id="formularioCrearAsignatura">
+                            <div class="form-group">
+                                <label for="nombreAsignatura">Nombre de asignatura</label>
+                                <input type="text" id="nombreAsignatura" placeholder="Introduce el nombre de la asignatura" required>
+                                <span class="error" id="nombreAsignaturaError"></span>
+                            </div>
+                            <button id="crearAsignatura">Crear asignatura</button>
+                        </form>
                     </div>
                 </div>
                 
@@ -72,69 +86,88 @@
                     <h2>Eliminar...</h2>
                     <div class="caja">
                         <h3>Eliminar estudiante</h3>
-                        <div class="form-group">
-                            <label for="idEstudianteEliminar">ID estudiante</label>
-                            <input type="text" id="idEstudianteEliminar" placeholder="Introduce el ID del estudiante a eliminar">
-                        </div>
-                        <button id="eliminarEstudiante">Eliminar</button>
+                        <form id="formularioEliminarEstudiante">
+                            <div class="form-group">
+                                <label for="idEstudianteEliminar">ID estudiante</label>
+                                <input type="text" id="idEstudianteEliminar" placeholder="Introduce el ID del estudiante a eliminar" required pattern="^E\d+$">
+                                <span class="error" id="idEstudianteEliminarError"></span>
+                            </div>
+                            <button id="eliminarEstudiante">Eliminar</button>
+                        </form>
                     </div>
 
                     <div class="caja">
                         <h3>Eliminar asignatura</h3>
-                        <div class="form-group">
-                            <label for="asignaturaEliminar">Nombre de asignatura</label>
-                            <input type="text" id="asignaturaEliminar" placeholder="Introduce la asignatura a eliminar">
-                        </div>
-                        <button id="eliminarAsignatura">Eliminar</button>
+                        <form id="formularioEliminarAsignatura">
+                            <div class="form-group">
+                                <label for="asignaturaEliminar">Nombre de asignatura</label>
+                                <input type="text" id="asignaturaEliminar" placeholder="Introduce la asignatura a eliminar" required>
+                                <span class="error" id="asignaturaEliminarError"></span>
+                            </div>
+                            <button id="eliminarAsignatura">Eliminar</button>
+                        </form>
                     </div>
                 </div>
 
                 <div class="contenedor">
                     <h2>Matricular estudiante</h2>
                     <div class="caja">
-                        <div class="form-group">
-                            <label for="idEstudianteMatricular">ID estudiante</label>
-                            <input type="text" id="idEstudianteMatricular" placeholder="Introduce el ID del estudiante a matricular">
-                        </div>
-                        <div class="form-group">
-                            <label for="asignaturaMatricular">Nombre de asignatura</label>
-                            <input type="text" id="asignaturaMatricular" placeholder="Introduce la asignatura en la que se matriculará">
-                        </div>
-                        <button id="matricularEstudianteAsignatura">Matricular</button>
+                        <form id="formularioMatricularEstudiante">
+                            <div class="form-group">
+                                <label for="idEstudianteMatricular">ID estudiante</label>
+                                <input type="text" id="idEstudianteMatricular" placeholder="Introduce el ID del estudiante a matricular" required pattern="^E\d+$">
+                                <span class="error" id="idEstudianteMatricularError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="asignaturaMatricular">Nombre de asignatura</label>
+                                <input type="text" id="asignaturaMatricular" placeholder="Introduce la asignatura en la que se matriculará" required>
+                                <span class="error" id="asignaturaMatricularError"></span>
+                            </div>
+                            <button id="matricularEstudianteAsignatura">Matricular</button>
+                        </form>
                     </div>
                 </div>
 
                 <div class="contenedor">
                     <h2>Desmatricular estudiante</h2>
                     <div class="caja">
-                        <div class="form-group">
-                            <label for="idEstudianteDesmatricular">ID estudiante</label>
-                            <input type="text" id="idEstudianteDesmatricular" placeholder="Introduce el ID del estudiante a desmatricular">
-                        </div>
-                        <div class="form-group">
-                            <label for="asignaturaDesmatricular">Nombre de asignatura</label>
-                            <input type="text" id="asignaturaDesmatricular" placeholder="Introduce la asignatura en la que se desmatriculará">
-                        </div>
-                        <button id="desmatricularEstudianteAsignatura">Desmatricular</button>
+                        <form id="formularioDesmatricularEstudiante">
+                            <div class="form-group">
+                                <label for="idEstudianteDesmatricular">ID estudiante</label>
+                                <input type="text" id="idEstudianteDesmatricular" placeholder="Introduce el ID del estudiante a desmatricular" required pattern="^E\d+$">
+                                <span class="error" id="idEstudianteDesmatricularError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="asignaturaDesmatricular">Nombre de asignatura</label>
+                                <input type="text" id="asignaturaDesmatricular" placeholder="Introduce la asignatura en la que se desmatriculará" required>
+                                <span class="error" id="asignaturaDesmatricularError"></span>
+                            </div>
+                            <button id="desmatricularEstudianteAsignatura">Desmatricular</button>
+                        </form>
                     </div>
                 </div>
 
                 <div class="contenedor">
                     <h2>Calificar estudiante</h2>
                     <div class="caja">
-                        <div class="form-group">
-                            <label for="idEstudianteCalificar">ID estudiante</label>
-                            <input type="text" id="idEstudianteCalificar" placeholder="Introduce el ID del estudiante a calificar">
-                        </div>
-                        <div class="form-group">
-                            <label for="asignaturaCalificar">Nombre de asignatura</label>
-                            <input type="text" id="asignaturaCalificar" placeholder="Introduce la asignatura que se calificará">
-                        </div>
-                        <div class="form-group">
-                            <label for="nota">Calificaci&oacute;n</label>
-                            <input type="number" id="nota" placeholder="Introduce la nota">
-                        </div>
-                        <button id="calificarEstudianteAsignatura">Calificar</button>
+                        <form id="formularioCalificarEstudiante">
+                            <div class="form-group">
+                                <label for="idEstudianteCalificar">ID estudiante</label>
+                                <input type="text" id="idEstudianteCalificar" placeholder="Introduce el ID del estudiante a calificar" required pattern="^E\d+$">
+                                <span class="error" id="idEstudianteCalificarError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="asignaturaCalificar">Nombre de asignatura</label>
+                                <input type="text" id="asignaturaCalificar" placeholder="Introduce la asignatura que se calificará" required>
+                                <span class="error" id="asignaturaCalificarError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="nota">Calificaci&oacute;n</label>
+                                <input type="number" id="nota" placeholder="Introduce la nota" required pattern="^\d+$">
+                                <span class="error" id="notaError"></span>
+                            </div>
+                            <button id="calificarEstudianteAsignatura">Calificar</button>
+                        </form>
                     </div>
                 </div>
 
@@ -142,11 +175,14 @@
                     <h2>Promedios...</h2>
                     <div class="caja">
                         <h3>Promedio de un estudiante</h3>
-                        <div class="form-group">
-                            <label for="idEstudiantePromedio">ID estudiante</label>
-                            <input type="text" id="idEstudiantePromedio" placeholder="Introduce el ID del estudiante para calcular el promedio">
-                        </div>
-                        <button id="promedioEstudiante">Calcular</button>
+                        <form id="formularioPromedioEstudiante">
+                            <div class="form-group">
+                                <label for="idEstudiantePromedio">ID estudiante</label>
+                                <input type="text" id="idEstudiantePromedio" placeholder="Introduce el ID del estudiante para calcular el promedio" required pattern="^E\d+$">
+                                <span class="error" id="idEstudiantePromedioError"></span>
+                            </div>
+                            <button id="promedioEstudiante">Calcular</button>
+                        </form>
                     </div>
                     
                     <div class="caja">
