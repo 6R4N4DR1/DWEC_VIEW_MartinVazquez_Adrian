@@ -133,3 +133,11 @@ Para configurar y ejecutar el proyecto en otra máquina, sigue estos pasos:
 
    ```
 4. Abre `index.html` o `jquery.html` en tu navegador con Live Server para ver la aplicación en funcionamiento.
+
+## Componentes de Flowbite Utilizados
+
+He usado los siguientes componentes de Flowbite:
+
+1.**Header Breadcrumb**: He utilizado el componente de breadcrumb en el header y lo he modificado para eliminar los datos que sobraban y los div y span que inyectaban los he cambiado por section. Aquí está el enlace al componente: [Flowbite Header Breadcrumb](https://flowbite.com/docs/components/breadcrumb/#header-breadcrumb).
+
+2.**Default Footer**: He utilizado el componente de footer por defecto de Tailwind CSS y lo he modificado para eliminar los datos que sobraban y los div y span que inyectaban los he cambiado por section. Aquí está el enlace al componente: [Flowbite Default Footer](https://flowbite.com/docs/components/footer/#default-footer).
