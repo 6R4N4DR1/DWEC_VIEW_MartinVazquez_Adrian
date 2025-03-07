@@ -1,10 +1,13 @@
-# Tarea 6 - Asincronía
 
-## Descripción del Proyecto
+# 🐶 Tarea 6 - Asincronía
+
+## Proyecto: Vista de Tarjetas de Perros
+
+## 📄 Descripción del Proyecto
 
 Este proyecto es una tarea de Asincronía que utiliza JavaScript, jQuery y Tailwind CSS para crear una página web que muestra imágenes de perros obtenidas de una API. La página incluye dos archivos HTML (`index.html` y `jquery.html`), cada uno con su propio script para manejar la lógica de la aplicación.
 
-## Estructura del Proyecto
+## 📁 Estructura del Proyecto
 
 -`css/`: Contiene los archivos CSS, incluyendo el archivo de entrada `estilos.css` y el archivo de salida `output.css` generado por Tailwind CSS.
 
@@ -14,7 +17,7 @@ Este proyecto es una tarea de Asincronía que utiliza JavaScript, jQuery y Tailw
 
 -`js/`: Contiene los archivos JavaScript para ambas páginas (`script.js` y `script-jquery.js`).
 
-## Flujo de Trabajo
+## 🚀 Flujo de Trabajo
 
 1.**Configuración del Entorno**: Asegúrate de tener Node.js y npm instalados en tu máquina.
 
@@ -24,9 +27,9 @@ Este proyecto es una tarea de Asincronía que utiliza JavaScript, jQuery y Tailw
 
 4.**Ejecución del Proyecto**: Abre `index.html` o `jquery.html` en tu navegador para ver la aplicación en funcionamiento.
 
-## Configuración
+## ⚙️ Configuración
 
-### Dependencias
+### 📦 Dependencias
 
 El proyecto utiliza las siguientes dependencias:
 
@@ -38,15 +41,16 @@ El proyecto utiliza las siguientes dependencias:
 
 -`tailwindcss`: Framework CSS.
 
-### Scripts
+### 📜 Scripts
 
 -`build:css`: Compila los estilos de Tailwind CSS.
 
-### Tailwind CSS
+### 🎨 Tailwind CSS
 
 El archivo `tailwind.config.js` está configurado para extender los colores y el espaciado, y para incluir los plugins necesarios.
 
 ```js
+
 /** @type{import('tailwindcss').Config} */
 
 module.exports= {
@@ -57,7 +61,7 @@ module.exports= {
 
     extend: {
 
-      colors:{
+      colors: {
 
         'rojo': {
 
@@ -71,13 +75,13 @@ module.exports= {
 
       },
 
-      spacing:{
+      spacing: {
 
         '27xl': '120rem'
 
       },
 
-      screen:{
+      screen: {
 
         '5xl': '2000px'
 
@@ -99,13 +103,13 @@ module.exports= {
 
 ```
 
-## Uso
+## 🛠️ Uso
 
 1.**Abrir la Página**: Abre `index.html` o `jquery.html` en tu navegador con Live Server.
 
 2.**Interacción**: La página cargará automáticamente imágenes de perros desde la API y las mostrará en un contenedor. Al hacer scroll hasta el final de la página, se cargarán más imágenes automáticamente.
 
-## Comandos
+## 💻 Comandos
 
 Para configurar y ejecutar el proyecto en otra máquina, sigue estos pasos:
 
@@ -134,10 +138,38 @@ Para configurar y ejecutar el proyecto en otra máquina, sigue estos pasos:
    ```
 4. Abre `index.html` o `jquery.html` en tu navegador con Live Server para ver la aplicación en funcionamiento.
 
-## Componentes de Flowbite Utilizados
+## 📚 Componentes de Flowbite Utilizados
 
 He usado los siguientes componentes de Flowbite:
 
 1.**Header Breadcrumb**: He utilizado el componente de breadcrumb en el header y lo he modificado para eliminar los datos que sobraban y los div y span que inyectaban los he cambiado por section. Aquí está el enlace al componente: [Flowbite Header Breadcrumb](https://flowbite.com/docs/components/breadcrumb/#header-breadcrumb).
 
 2.**Default Footer**: He utilizado el componente de footer por defecto de Tailwind CSS y lo he modificado para eliminar los datos que sobraban y los div y span que inyectaban los he cambiado por section. Aquí está el enlace al componente: [Flowbite Default Footer](https://flowbite.com/docs/components/footer/#default-footer).
+
+## 📸 Capturas de Pantalla
+
+### Página Principal (index.html)
+
+![Página Principal](./screenshots/index.png)
+
+### Página con jQuery (jquery.html)
+
+![Página con jQuery](./screenshots/jquery.png)
+
+## 🤝 Contribuciones
+
+Las contribuciones son bienvenidas. Si deseas contribuir, por favor sigue los siguientes pasos:
+
+1. Haz un fork del proyecto.
+2. Crea una nueva rama (`git checkout -b feature/nueva-funcionalidad`).
+3. Realiza tus cambios y haz commit (`git commit -am 'Añadir nueva funcionalidad'`).
+4. Haz push a la rama (`git push origin feature/nueva-funcionalidad`).
+5. Abre un Pull Request.
+
+## 📜 Licencia
+
+Este proyecto está bajo la Licencia ISC. Consulta el archivo `LICENSE` para más detalles.
+
+## 📧 Contacto
+
+Para cualquier consulta o sugerencia, puedes contactarme a través de [mi correo electrónico](mailto:adrianmv25@outlook.es).
